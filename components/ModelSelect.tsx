@@ -73,30 +73,12 @@ export function ModelSelect({
         <div className="flex items-center justify-between gap-2 mb-4">
           <div className="flex items-center gap-2 w-full transition-opacity duration-200">
             <div className="bg-primary p-2 rounded-full">
-              <Link
-                className="hover:opacity-80"
-                href={
-                  "https://sdk.vercel.ai/providers/ai-sdk-providers/" +
-                  PROVIDER_LINKS[providerKey]
-                }
-                target="_blank"
-              >
-                <div className="text-primary-foreground">
-                  <Icon size={28} />
-                </div>
-              </Link>
+              <div className="text-primary-foreground">
+                <Icon size={28} />
+              </div>
             </div>
             <div className="flex flex-col w-full">
-              <Link
-                className="hover:opacity-80"
-                href={
-                  "https://sdk.vercel.ai/providers/ai-sdk-providers/" +
-                  PROVIDER_LINKS[providerKey]
-                }
-                target="_blank"
-              >
-                <h3 className="font-semibold text-lg">{label}</h3>
-              </Link>
+              <h3 className="font-semibold text-lg text-foreground">{label}</h3>
               <div className="flex justify-between items-center w-full">
                 <Select
                   defaultValue={value}
@@ -115,13 +97,13 @@ export function ModelSelect({
                           <span className="hidden xl:inline">
                             {imageHelpers.formatModelId(model).length > 30
                               ? imageHelpers.formatModelId(model).slice(0, 30) +
-                                "..."
+                              "..."
                               : imageHelpers.formatModelId(model)}
                           </span>
                           <span className="hidden lg:inline xl:hidden">
                             {imageHelpers.formatModelId(model).length > 20
                               ? imageHelpers.formatModelId(model).slice(0, 20) +
-                                "..."
+                              "..."
                               : imageHelpers.formatModelId(model)}
                           </span>
 

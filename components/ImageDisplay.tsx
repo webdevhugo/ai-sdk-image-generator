@@ -79,18 +79,18 @@ export function ImageDisplay({
     <>
       <div
         className={cn(
-          "relative w-full aspect-square group bg-zinc-50 rounded-lg",
+          "relative w-full aspect-square group bg-zinc-50 dark:bg-zinc-900 rounded-lg",
           image && !failed && "cursor-pointer",
-          (!image || failed) && "border-1 border-zinc-100",
+          (!image || failed) && "border-1 border-zinc-100 dark:border-zinc-800",
         )}
         onClick={handleImageClick}
       >
         {(image || failed) && (
-          <div className="absolute top-2 left-2 max-w-[75%] bg-white/95 px-2 py-1 flex items-center gap-2 rounded-lg">
+          <div className="absolute top-2 left-2 max-w-[75%] bg-white/95 dark:bg-zinc-800/95 px-2 py-1 flex items-center gap-2 rounded-lg">
             <TooltipProvider>
               <Tooltip delayDuration={100}>
                 <TooltipTrigger asChild>
-                  <Label className="text-xs text-gray-900 truncate min-w-0 grow">
+                  <Label className="text-xs text-gray-900 dark:text-gray-100 truncate min-w-0 grow">
                     {imageHelpers.formatModelId(modelId)}
                   </Label>
                 </TooltipTrigger>
@@ -123,7 +123,7 @@ export function ImageDisplay({
               </span>
             </Button>
             {timing?.elapsed && (
-              <div className="absolute bottom-2 right-2 bg-black/70 backdrop-blur-sm rounded-md px-2 py-1 shadow">
+              <div className="absolute bottom-2 right-2 bg-black/70 dark:bg-white/20 backdrop-blur-sm rounded-md px-2 py-1 shadow">
                 <span className="text-xs text-white/90 font-medium">
                   {(timing.elapsed / 1000).toFixed(1)}s
                 </span>
@@ -158,11 +158,10 @@ export function ImageDisplay({
               </>
             ) : timing?.startTime ? (
               <>
-                {/* <div className="text-zinc-400 mb-2">{provider}</div> */}
                 <Stopwatch startTime={timing.startTime} />
               </>
             ) : (
-              <ImageIcon className="h-12 w-12 text-zinc-300" />
+              <ImageIcon className="h-12 w-12 text-zinc-300 dark:text-zinc-600" />
             )}
           </div>
         )}
