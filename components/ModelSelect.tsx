@@ -19,7 +19,6 @@ import {
 import { ProviderTiming } from "@/lib/image-types";
 
 import { ImageDisplay } from "./ImageDisplay";
-import Link from "next/link";
 
 interface ModelSelectProps {
   label: string;
@@ -42,13 +41,6 @@ const PROVIDER_ICONS = {
   replicate: ReplicateIcon,
   vertex: VertexIcon,
   fireworks: FireworksIcon,
-} as const;
-
-const PROVIDER_LINKS = {
-  openai: "openai",
-  replicate: "replicate",
-  vertex: "google-vertex",
-  fireworks: "fireworks",
 } as const;
 
 export function ModelSelect({

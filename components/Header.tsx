@@ -1,7 +1,5 @@
 "use client"
 
-import Link from "next/link";
-import { Button } from "./ui/button";
 import { useScopedI18n } from "@/locales/client";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { ThemeModeToggle } from "@/components/ThemeModeToggle";
